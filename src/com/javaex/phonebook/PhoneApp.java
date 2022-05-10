@@ -139,8 +139,6 @@ public class PhoneApp {
 					
 			}//switch
 			
-			
-			
 		}//while	
 		
 		
