@@ -107,8 +107,8 @@ public class PhoneApp {
 					BufferedWriter bw = new BufferedWriter(fw);
 					
 					for (Person p: personList) {
-						String saveStr = p.getName() + "," + p.getHp() + "," + p.getCompany();
-						bw.write(saveStr);
+						String savep = p.getName() + "," + p.getHp() + "," + p.getCompany();
+						bw.write(savep);
 						bw.newLine();
 					}
 					
