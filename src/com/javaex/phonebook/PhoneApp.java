@@ -35,9 +35,9 @@ public class PhoneApp {
 				String hp = personInfo[1];
 				String company = personInfo[2];
 	
-				Person pb = new Person(name, hp, company);
+				Person person = new Person(name, hp, company);
 				
-				personList.add(pb);
+				personList.add(person);
 			}
 		
 		
@@ -62,7 +62,7 @@ public class PhoneApp {
 				
 				break;
 				
-			}//무한루프 탈출조건
+			}//무한반복 탈출조건
 			
 			switch(num) {
 				
@@ -88,8 +88,19 @@ public class PhoneApp {
 					System.out.print(">회사전화: ");
 					String company = sc.next();
 					//데이터 추가
-					Person pb = new Person(name, hp, company);
-					personList.add(pb);
+					Person newp = new Person(name, hp, company);
+					personList.add(newp);
+					
+					System.out.println("[등록되었습니다.]");
+					
+					break;
+					
+				case 3:
+					
+					System.out.println("</삭제>");
+					System.out.print(">번호 : ");
+					personList.remove(sc.nextInt()-1);	//배열 0부터 시작인데 리스트번호는 1부터 시작이라서 -1해줘야함
+					System.out.println("[삭제되었습니다.]");
 					
 					//쓰기스트림
 					Writer fw = new FileWriter("./PhoneDB.txt");
@@ -102,16 +113,7 @@ public class PhoneApp {
 					}
 					
 					bw.close();
-					System.out.println("[등록되었습니다.]");
 					
-					break;
-					
-				case 3:
-					
-					System.out.println("</삭제>");
-					System.out.print(">번호 : ");
-					personList.remove(sc.nextInt()-1);	//배열 0부터 시작인데 리스트번호는 1부터 시작이라서 -1해줘야함
-					System.out.println("[삭제되었습니다.]");
 					break;
 					
 				case 4://검색 
@@ -133,7 +135,6 @@ public class PhoneApp {
 			
 			
 		}//while	
-	
 		
 		
 		br.close();
