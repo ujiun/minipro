@@ -106,7 +106,7 @@ public class PhoneApp {
 					Writer fw = new FileWriter("./PhoneDB.txt");
 					BufferedWriter bw = new BufferedWriter(fw);
 					
-					for (Person p: personList) {
+					for (Person p :personList) {
 						String savep = p.getName() + "," + p.getHp() + "," + p.getCompany();
 						bw.write(savep);
 						bw.newLine();
@@ -120,7 +120,14 @@ public class PhoneApp {
 					
 					System.out.println("<4.검색>");
 					System.out.print(">이름: ");
+					String contain = sc.next();
+					//contains() --> 대상 문자열에서 찾고자 하는 문자열이 포함되어있는지 여부를 알고 싶을때
 					
+					for (Person p :personList) {
+						if(p.getName().contains(contain)) {
+							System.out.println("이름: " + p.getName() + "\t" +p.getHp() + "\t" + p.getCompany());
+						}
+					}
 					
 					break;
 					
