@@ -93,6 +93,17 @@ public class PhoneApp {
 					
 					System.out.println("[등록되었습니다.]");
 					
+					//쓰기스트림
+					Writer fw = new FileWriter("./PhoneDB.txt");
+					BufferedWriter bw = new BufferedWriter(fw);
+					
+					for (Person p :personList) {
+						String savep = p.getName() + "," + p.getHp() + "," + p.getCompany();
+						bw.write(savep);
+						bw.newLine();
+					}
+			
+					bw.close();
 					break;
 					
 				case 3:
@@ -103,17 +114,16 @@ public class PhoneApp {
 					System.out.println("[삭제되었습니다.]");
 					
 					//쓰기스트림
-					Writer fw = new FileWriter("./PhoneDB.txt");
-					BufferedWriter bw = new BufferedWriter(fw);
+					Writer fw2 = new FileWriter("./PhoneDB.txt");
+					BufferedWriter bw2 = new BufferedWriter(fw2);
 					
 					for (Person p :personList) {
 						String savep = p.getName() + "," + p.getHp() + "," + p.getCompany();
-						bw.write(savep);
-						bw.newLine();
+						bw2.write(savep);
+						bw2.newLine();
 					}
-					
-					bw.close();
-					
+			
+					bw2.close();
 					break;
 					
 				case 4://검색 
@@ -139,7 +149,7 @@ public class PhoneApp {
 					
 			}//switch
 			
-		}//while	
+		}//while
 		
 		
 		br.close();
