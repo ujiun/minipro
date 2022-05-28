@@ -110,7 +110,9 @@ public class PhoneApp {
 					
 					System.out.println("</삭제>");
 					System.out.print(">번호 : ");
-					personList.remove(sc.nextInt()-1);	//배열 0부터 시작인데 리스트번호는 1부터 시작이라서 -1해줘야함
+					int delete = sc.nextInt();
+					
+					personList.remove(delete-1);	//배열 0부터 시작인데 리스트번호는 1부터 시작이라서 -1해줘야함
 					System.out.println("[삭제되었습니다.]");
 					
 					//쓰기스트림
